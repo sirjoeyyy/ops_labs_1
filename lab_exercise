@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {
+        "Vnet": "Virtual_OPS_LABS_EXERCISE",
+        "Subnet-1": "Frontend",
+        "Subnet-2": "Backend",
+        "Subnet-3": "database",
+    },
+    "resources": [
+       {
+        <<>>
+       },
+       
+    
+       
+       {
+        "name": "[variables('Vnet')]",
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2023-04-01",
+        "location": "[resourceGroup().location]",
+        "tags": {
+            "displayName": "OPS_LABS_EXERCISE"
+        },
+        "properties": {
+            "addressSpace": {
+                "addressPrefixes": [
+                    "192.168.0.0/16"
+                ]
+            },
+            "subnets": [
+                {
+                    "name": "[variables('Subnet-1')]",
+                    "properties": {
+                        "addressPrefix": "192.168.0.0/16"
+                    }
+                },
+                {
+                    "name": "[variables('Subnet-2')]",
+                    "properties": {
+                        "addressPrefix": "192.168.0.0/16"
+                    }
+                },
+
+                {
+                    "name": "[variables ('Subnet-3')]",
+                    "properties": {
+                        "addressPrefix": "192.168.0.0/16"
+                    }
+                }
+            ]
+        }
+       }
+    ],
+    "outputs": {}
+}
